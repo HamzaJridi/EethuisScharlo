@@ -8,8 +8,9 @@ import { AppRouting, ROUTES } from './app.routes';
 import { HomeComponent } from './pages/home/home.component';
 import { HuisComponent } from './pages/huis/huis.component';
 import { MenuComponent } from './pages/menu/menu.component';
-import { WinkelwagenComponent } from './pages/winkelwagen/winkelwagen.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { ShoppingCardComponent } from './pages/shopping-card/shopping-card.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -17,8 +18,9 @@ import { ContactComponent } from './pages/contact/contact.component';
     HomeComponent,
     HuisComponent,
     MenuComponent,
-    WinkelwagenComponent,
-    ContactComponent
+    ContactComponent,
+    ShoppingCardComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
