@@ -5,6 +5,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Development server
 
 Run `npm start` to run the Angular App iwith HotReload on 4200
+
 Run `nodemon server.js` to run the Node.js App iwith HotReload on 3000
 
 ## Code scaffolding
