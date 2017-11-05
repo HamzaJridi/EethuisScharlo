@@ -7,6 +7,8 @@ install node v 8.x
 
 Run `npm install -g @angular/cli`
 
+Run `npm install -g nodemon`
+
 Run `npm install`
 
 Run `npm start` to run the Angular App iwith HotReload on 4200
