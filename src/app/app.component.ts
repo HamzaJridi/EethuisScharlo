@@ -9,7 +9,6 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'app works!';
   constructor(private http: HttpClient) {}
 
   public ngOnInit() {

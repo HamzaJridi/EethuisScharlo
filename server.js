@@ -6,7 +6,9 @@ const bodyParser = require('body-parser');
 
 // Get our API routes
 const api = require('./server/routes/api');
-
+const nodemailer = require('./server/mail/mailer');
+nodemailer.console()
+// nodemailer.createTestAccount()
 const app = express();
 
 // Parsers for POST data
@@ -47,7 +49,7 @@ app.get('*', (req, res) => {
 /**
  * Get port from environment and store in Express.
  */
-const port = process.env.PORT || '3000';
+const port = process.env.PORT || '3100';
 app.set('port', port);
 
 /**
