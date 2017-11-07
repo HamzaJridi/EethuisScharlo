@@ -31,7 +31,7 @@ body{
 .ribbon {
   width: 35%;
   position: relative;
-  background:#CADDE1;
+  background:#fee8ce;
   height: 70px;
   margin: 0px auto;
   left: 0;
@@ -42,7 +42,7 @@ body{
   position: absolute;
   display: block;
   top: 0;
-  border: 35px solid #CADDE1;
+  border: 35px solid #fee8ce;
   z-index: 1;
 }
 .ribbon::before {
@@ -73,7 +73,7 @@ body{
   margin-top: 2em;
 }
 .banner-bottom {
-  background-color: #CADDE1;
+  background-color: #fee8ce;
   min-height: 350px;
   position:relative;
 }
