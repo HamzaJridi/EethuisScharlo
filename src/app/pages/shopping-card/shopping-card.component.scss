@@ -1,0 +1,55 @@
+.menu_category {
+  background-color: white;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+.category-name {
+  font-size: 26px;
+  font-weight: bold;
+  padding-bottom: 10px;
+  margin-left: 1rem !important;
+}
+.category-content {
+  margin-left: 1rem !important;
+}
+li {
+  font-size: 18px;
+  padding-bottom: 10px;
+}
+.meal-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+.meal-item {
+  color: black !important;
+  margin-left: 2rem !important;
+}
+.price {
+  color: orangered;
+  float: right;
+}
+.add-to-cart {
+  content:url(../../assets/images/add-to-cart.png);
+  max-height: 24px;
+  width: 24px;
+  float: right;
+}
+.padding-top-10 {
+  padding-top: 10px;
+}
+input {
+  color: #777;
+  width: 2em;
+  font-size: 2em;
+  border-radius: 10px;
+  border: 2px solid #ccc;
+  padding-left: 10px;
+}
+input[type=number]::-webkit-inner-spin-button {
+  opacity: 0.3;
+}
+input[type=number]::-webkit-outer-spin-button {
+  opacity: 0.3;
+}
