@@ -1,0 +1,40 @@
+.menu_category {
+  background-color: white;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+.category-name {
+  font-size: 26px;
+  font-weight: bold;
+  padding-bottom: 10px;
+  margin-left: 1rem !important;
+}
+.category-content {
+  margin-left: 1rem !important;
+}
+li {
+  font-size: 18px;
+  padding-bottom: 10px;
+}
+.meal-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+.meal-item {
+  color: black !important;
+  margin-left: 2rem !important;
+}
+.price {
+color: orangered;
+  float: right;
+}
+.add-to-cart {
+  content:url(../../assets/images/add-to-cart.png);
+  max-height: 24px;
+  width: 24px;
+  float: right;
+}
+.padding-top-10 {
+  padding-top: 10px;
+}

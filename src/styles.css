@@ -61,7 +61,7 @@ body a:hover{
 .ribbon {
   width: 35%;
   position: relative;
-  background:#CADDE1;
+  background:#fee8ce;
   height: 70px;
   margin: 0px auto;
   left: 0;
@@ -72,7 +72,7 @@ body a:hover{
   position: absolute;
   display: block;
   top: 0;
-  border: 35px solid #CADDE1;
+  border: 35px solid #fee8ce;
   z-index: 1;
 }
 .ribbon::before {
@@ -103,7 +103,7 @@ body a:hover{
   margin-top: 2em;
 }
 .banner-bottom {
-  background-color: #CADDE1;
+  background-color: #fee8ce;
   min-height: 350px;
   position:relative;
 }
@@ -325,7 +325,7 @@ img.zoom-img:hover{
 }
 .services span.glyphicon {
   font-size: 3em;
-  color:#CADDE1;
+  color:#fee8ce;
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
   -o-transform: rotate(-45deg);
@@ -467,9 +467,9 @@ img.zoom-img:hover{
 /*--//services--*/
 /*--menu--*/
 .menu {
-  padding: 13em 0 5em;
+  padding: 1em 0 5em;
   position: relative;
-  background-color: #CADDE1;
+  background-color: #fee8ce;
 }
 .menu-tag {
   position: absolute;
@@ -1037,7 +1037,7 @@ ul.social-slide li i.mac{
   border-radius: 20px;
   width: 12px;
   display: inline-block;
-  background: #CADDE1;
+  background: #fee8ce;
 }
 .callbacks_here a:after{
   background: #9b9b9b;
@@ -1107,7 +1107,7 @@ ul.social-slide li i.mac{
 }
 .about-team {
   padding:5em 0;
-  background: #CADDE1;
+  background: #fee8ce;
 }
 .team-grids {
   margin-top: 3em;
@@ -1988,7 +1988,7 @@ h2.typoh2{
     }
 
     .ribbon::before, .ribbon::after {
-      border: 30px solid #CADDE1;
+      border: 30px solid #fee8ce;
     }
 
     .ribbon::before {
@@ -2379,7 +2379,7 @@ h2.typoh2{
       }
 
       .ribbon::before, .ribbon::after {
-        border: 24px solid #CADDE1;
+        border: 24px solid #fee8ce;
       }
 
       .ribbon::before {
