@@ -41,11 +41,4 @@ nodemailer.createTestAccount((err, account) => {
   });
 });
 
-
-nodemailer.console = (() => {
-  "use strict";
-  // console.log('*********** MAILER ***********');
-})
-
-
 module.exports = nodemailer;

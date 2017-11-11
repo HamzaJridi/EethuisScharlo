@@ -1,167 +1,21 @@
 <div class="menu row">
   <div class="col-md-3 left-side"></div>
   <div class="col-md-6">
-    <div class="menu_category row">
-      <div class="row">
-        <div class="category-name row">Meest populaire</div>
-        <ul class="category-content row list-unstyled">
-          <li itemtype="http://schema.org/Product">
-            <div class="row meal-item">
-              <div class="col-md-8">
-                <div class="row meal-name">Kapsalon Groot</div>
-                <div class="row">Kip of kalfsvlees.</div>
-              </div>
-              <div class="col-md-4 padding-top-10" itemtype="http://schema.org/Offer">
-                <div class="price col-md-5">€ 7,00</div>
-                <div class="add-to-cart" onclick="alert('item clicked');return false;"></div>
-              </div>
-            </div>
-          </li>
-          <li itemtype="http://schema.org/Product">
-            <div class="row meal-item">
-              <div class="col-md-8">
-                <div class="row meal-name">Kapsalon Groot</div>
-                <div class="row">Kip of kalfsvlees.</div>
-              </div>
-              <div class="col-md-4 padding-top-10" itemtype="http://schema.org/Offer">
-                <div class="price col-md-5">€ 7,00</div>
-                <div class="add-to-cart" onclick="alert('item clicked');return false;"></div>
-              </div>
-            </div>
-          </li>
-          <li itemtype="http://schema.org/Product">
-            <div class="row meal-item">
-              <div class="col-md-8">
-                <div class="row meal-name">Kapsalon Groot</div>
-                <div class="row">Kip of kalfsvlees.</div>
-              </div>
-              <div class="col-md-4 padding-top-10" itemtype="http://schema.org/Offer">
-                <div class="price col-md-5">€ 7,00</div>
-                <div class="add-to-cart" onclick="alert('item clicked');return false;"></div>
-              </div>
-            </div>
-          </li>
-          <li itemtype="http://schema.org/Product">
-            <div class="row meal-item">
-              <div class="col-md-8">
-                <div class="row meal-name">Kapsalon Groot</div>
-                <div class="row">Kip of kalfsvlees.</div>
-              </div>
-              <div class="col-md-4 padding-top-10" itemtype="http://schema.org/Offer">
-                <div class="price col-md-5">€ 7,00</div>
-                <div class="add-to-cart" onclick="alert('item clicked');return false;"></div>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
 
-    <div class="menu_category row">
+    <div class="menu_category row" *ngFor="let menu of menuList">
       <div class="row">
-        <div class="category-name row">Meest populaire</div>
+        <div class="category-name row">{{menu.categoryName}}</div>
         <ul class="category-content row list-unstyled">
-          <li itemtype="http://schema.org/Product">
+          <li itemtype="http://schema.org/Product" *ngFor="let menuItem of menu.menuItems">
             <div class="row meal-item">
               <div class="col-md-8">
-                <div class="row meal-name">Kapsalon Groot</div>
-                <div class="row">Kip of kalfsvlees.</div>
+                <div class="row meal-name">{{menuItem.name}}</div>
+                <div class="row">desc: {{menuItem.description}}</div>
+                <div class="row">Ingredients: {{menuItem.ingredients}}</div>
               </div>
               <div class="col-md-4 padding-top-10" itemtype="http://schema.org/Offer">
-                <div class="price col-md-5">€ 7,00</div>
-                <div class="add-to-cart" onclick="alert('item clicked');return false;"></div>
-              </div>
-            </div>
-          </li>
-          <li itemtype="http://schema.org/Product">
-            <div class="row meal-item">
-              <div class="col-md-8">
-                <div class="row meal-name">Kapsalon Groot</div>
-                <div class="row">Kip of kalfsvlees.</div>
-              </div>
-              <div class="col-md-4 padding-top-10" itemtype="http://schema.org/Offer">
-                <div class="price col-md-5">€ 7,00</div>
-                <div class="add-to-cart" onclick="alert('item clicked');return false;"></div>
-              </div>
-            </div>
-          </li>
-          <li itemtype="http://schema.org/Product">
-            <div class="row meal-item">
-              <div class="col-md-8">
-                <div class="row meal-name">Kapsalon Groot</div>
-                <div class="row">Kip of kalfsvlees.</div>
-              </div>
-              <div class="col-md-4 padding-top-10" itemtype="http://schema.org/Offer">
-                <div class="price col-md-5">€ 7,00</div>
-                <div class="add-to-cart" onclick="alert('item clicked');return false;"></div>
-              </div>
-            </div>
-          </li>
-          <li itemtype="http://schema.org/Product">
-            <div class="row meal-item">
-              <div class="col-md-8">
-                <div class="row meal-name">Kapsalon Groot</div>
-                <div class="row">Kip of kalfsvlees.</div>
-              </div>
-              <div class="col-md-4 padding-top-10" itemtype="http://schema.org/Offer">
-                <div class="price col-md-5">€ 7,00</div>
-                <div class="add-to-cart" onclick="alert('item clicked');return false;"></div>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="menu_category row">
-      <div class="row">
-        <div class="category-name row">Meest populaire</div>
-        <ul class="category-content row list-unstyled">
-          <li itemtype="http://schema.org/Product">
-            <div class="row meal-item">
-              <div class="col-md-8">
-                <div class="row meal-name">Kapsalon Groot</div>
-                <div class="row">Kip of kalfsvlees.</div>
-              </div>
-              <div class="col-md-4 padding-top-10" itemtype="http://schema.org/Offer">
-                <div class="price col-md-5">€ 7,00</div>
-                <div class="add-to-cart" onclick="alert('item clicked');return false;"></div>
-              </div>
-            </div>
-          </li>
-          <li itemtype="http://schema.org/Product">
-            <div class="row meal-item">
-              <div class="col-md-8">
-                <div class="row meal-name">Kapsalon Groot</div>
-                <div class="row">Kip of kalfsvlees.</div>
-              </div>
-              <div class="col-md-4 padding-top-10" itemtype="http://schema.org/Offer">
-                <div class="price col-md-5">€ 7,00</div>
-                <div class="add-to-cart" onclick="alert('item clicked');return false;"></div>
-              </div>
-            </div>
-          </li>
-          <li itemtype="http://schema.org/Product">
-            <div class="row meal-item">
-              <div class="col-md-8">
-                <div class="row meal-name">Kapsalon Groot</div>
-                <div class="row">Kip of kalfsvlees.</div>
-              </div>
-              <div class="col-md-4 padding-top-10" itemtype="http://schema.org/Offer">
-                <div class="price col-md-5">€ 7,00</div>
-                <div class="add-to-cart" onclick="alert('item clicked');return false;"></div>
-              </div>
-            </div>
-          </li>
-          <li itemtype="http://schema.org/Product">
-            <div class="row meal-item">
-              <div class="col-md-8">
-                <div class="row meal-name">Kapsalon Groot</div>
-                <div class="row">Kip of kalfsvlees.</div>
-              </div>
-              <div class="col-md-4 padding-top-10" itemtype="http://schema.org/Offer">
-                <div class="price col-md-5">€ 7,00</div>
-                <div class="add-to-cart" onclick="alert('item clicked');return false;"></div>
+                <div class="price col-md-5">€ {{menuItem.price}}</div>
+                <div class="add-to-cart" (click)="addToShop(menu.categoryName, menuItem)"></div>
               </div>
             </div>
           </li>

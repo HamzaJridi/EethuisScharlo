@@ -1,0 +1,33 @@
+.welcome p {
+  font-size: 1em;
+  margin-top:.5em;
+  color: #555;
+  line-height: 1.8em;
+  text-align:center;
+}
+.welcome img {
+  width: 100%;
+}
+.welcome-info {
+  margin: 3em 0;
+}
+
+.testimonial-left {
+  background: url(../../assets/images/t1.jpg) no-repeat 0px 0px;
+  height: 125px;
+}
+
+.welcome-img1 {
+  overflow: hidden;
+  border: 8px solid #FFF;
+  background: url(../../assets/images/1.png) no-repeat center center;
+  background-size: cover;
+  min-height: 245px;
+}
+  .welcome-img2 {
+    overflow: hidden;
+    border: 8px solid #FFF;
+    background: url(../../assets/images/doner.jpg) no-repeat 0px 0px;
+    background-size: cover;
+    min-height: 245px;
+}

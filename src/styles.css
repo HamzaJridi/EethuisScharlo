@@ -265,24 +265,6 @@ h3.title {
   color: #000;
   text-align: center;
 }
-.welcome p {
-  font-size: 1em;
-  margin-top:.5em;
-  color: #555;
-  line-height: 1.8em;
-  text-align:center;
-}
-.welcome-img {
-  overflow: hidden;
-  border: 8px solid #FFF;
-}
-.welcome img {
-  width: 100%;
-}
-.welcome-info {
-  margin: 3em 0;
-}
-/*--//welcome--*/
 img.zoom-img {
   transform: scale(1, 1);
   -webkit-transform: scale(1, 1);
