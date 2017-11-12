@@ -1,5 +1,6 @@
 import { RouterModule, PreloadAllModules } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { Ng2Webstorage } from 'ng2-webstorage';
@@ -30,7 +31,8 @@ import { ApiCallsService } from './providers/api-calls.service';
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(ROUTES, {useHash: true, preloadingStrategy: PreloadAllModules}),
-    Ng2Webstorage
+    Ng2Webstorage,
+    FormsModule
   ],
   providers: [ApiCallsService],
   bootstrap: [AppComponent]

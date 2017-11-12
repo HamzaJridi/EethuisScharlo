@@ -16,7 +16,13 @@ export class MenuComponent implements OnInit {
   constructor(
     private apiCallsService: ApiCallsService,
     private localSt: LocalStorageService
-  ) { }
+  ) {
+    const menuListlocalSt = this.localSt.retrieve('shop-card-list');
+    console.log('************ menuListlocalSt', menuListlocalSt);
+    if (!menuListlocalSt) {
+      this.localSt.store('shop-card-list', this.selectedMenuList);
+    }
+  }
 
   ngOnInit() {
     this.getMenu();
@@ -25,7 +31,6 @@ export class MenuComponent implements OnInit {
   public getMenu() {
     this.getMenuObs = this.apiCallsService.getData('menu').subscribe(
       (data) => {
-        console.log('********* data', data);
         this.menuList = data['jsonContent'];
       },
       (error) => {
@@ -35,13 +40,20 @@ export class MenuComponent implements OnInit {
   }
 
   public addToShop(menuCategory, menuItem) {
-    console.log('********** menuCategory', menuCategory);
-    console.log('********** menuItem', menuItem);
     const selectedMenu = {menuCategory, menuItem};
+    if (this.alreadyExists(selectedMenu, this.selectedMenuList)) {
+      return;
+    }
     this.selectedMenuList.push(selectedMenu);
     this.localSt.store('shop-card-list', this.selectedMenuList);
-    let selectedMenuListlocalSt = this.localSt.retrieve('shop-card-list');
-    console.log('************* selectedMenuListlocalSt', selectedMenuListlocalSt);
+  }
+
+  public alreadyExists(menu, list) {
+    let exist = false;
+    for (const item of list) {
+      exist = (menu['menuItem']['id'] === item['menuItem']['id']);
+    }
+    return exist;
   }
 
 }

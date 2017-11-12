@@ -24,4 +24,8 @@ export class ApiCallsService {
     return this.httpClient.get(`${this.rootUrl}${url}`);
     // return this.httpClient.get('../assets/data/menu.json');
   }
+
+  public postData(url, data) {
+    return this.httpClient.post(`${this.rootUrl}${url}`, data);
+  }
 }

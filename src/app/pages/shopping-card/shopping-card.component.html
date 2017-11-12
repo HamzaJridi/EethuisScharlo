@@ -14,8 +14,9 @@
               </div>
               <div class="col-md-4 padding-top-10" itemtype="http://schema.org/Offer">
                 <div class="price col-md-5">€ {{item.menuItem.price}}</div>
+                <div class="price col-md-5" (click)="deleteMenu(item)">delete</div>
                 <div class="quantity col-md-5">
-                  <input type="number" min="0" value="1" step="1" onkeydown="return false" />
+                  <input type="number" min="0" value="1" step="1" [(ngModel)]="item.menuItem.quantity" />
                 </div>
               </div>
             </div>
@@ -43,4 +44,7 @@
     </div>
   <div class="col-md-3 right-side"></div>
 </div>
-
+  <div>
+    <button (click)="orderMenus()">Order Now</button>
+  </div>
+</div>
