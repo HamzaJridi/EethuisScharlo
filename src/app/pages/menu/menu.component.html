@@ -10,12 +10,12 @@
             <div class="row meal-item">
               <div class="col-md-8">
                 <div class="row meal-name">{{menuItem.name}}</div>
-                <div class="row">desc: {{menuItem.description}}</div>
-                <div class="row">Ingredients: {{menuItem.ingredients}}</div>
+                <!-- <div class="row">desc: {{menuItem.description}}</div> -->
+                <!-- <div class="row">Ingredients: {{menuItem.ingredients}}</div> -->
               </div>
               <div class="col-md-4 padding-top-10" itemtype="http://schema.org/Offer">
                 <div class="price col-md-5">€ {{menuItem.price}}</div>
-                <div class="add-to-cart" (click)="addToShop(menu.categoryName, menuItem)"></div>
+                <div title="Bestellen" class="add-to-cart" (click)="addToShop(menu.categoryName, menuItem)"></div>
               </div>
             </div>
           </li>
