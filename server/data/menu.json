@@ -1,5 +1,28 @@
 [{ 
   "categoryId" : 0,
+  "categoryName" : "Meest populaire",
+  "active": 1,
+  "menuItems" : [{ "name" : "Kapsalon Klein",  
+                   "description"  : "",
+                   "ingredients" : "",
+                   "price" : 5,
+                   "active": 1},
+				   
+				   { "name" : "Kapsalon Groot",  
+                   "description"  : "",
+                   "ingredients" : "",
+                   "price" : 7,
+                   "active": 1},
+				   
+				   { "name" : "Döner Klein",  
+                   "description"  : "",
+                   "ingredients" : "",
+                   "price" : 5,
+                   "active": 1}
+                   ] 
+},
+{ 
+  "categoryId" : 1,
   "categoryName" : "Salades, Rijst & Sopen",
   "active": 1,
   "menuItems" : [{ "name" : "Gemengde Salade",  
@@ -41,7 +64,7 @@
 },
 
 { 
-  "categoryId" : 1,
+  "categoryId" : 2,
   "categoryName" : "Kapsalon",
   "active": 1,
   "menuItems" : [{ "name" : "Kapsalon Klein",  
@@ -77,7 +100,7 @@
 },
 
 { 
-  "categoryId" : 2,
+  "categoryId" : 3,
   "categoryName" : "Broodjes",
   "active": 1,
   "menuItems" : [{ "name" : "Döner Klein",  
@@ -173,7 +196,7 @@
 },
 
 { 
-  "categoryId" : 3,
+  "categoryId" : 4,
   "categoryName" : "Turkse Pizza's & Durum",
   "active": 1,
   "menuItems" : [{ "name" : "Dürüm Döner",  
@@ -251,7 +274,7 @@
 },
 
 { 
-  "categoryId" : 4,
+  "categoryId" : 5,
   "categoryName" : "Extra's",
   "active": 1,
   "menuItems" : [{ "name" : "Patat per portie",  
@@ -281,7 +304,7 @@
 }, 
 
 { 
-  "categoryId" : 5,
+  "categoryId" : 6,
   "categoryName" : "Schotels",
   "active": 1,
   "menuItems" : [{ "name" : "Döner Kebab",  
@@ -395,7 +418,7 @@
 },
 
 { 
-  "categoryId" : 6,
+  "categoryId" : 7,
   "categoryName" : "Kip Schotels",
   "active": 1,
   "menuItems" : [{ "name" : "Halfe Kip",  
@@ -455,7 +478,7 @@
 },
 
 { 
-  "categoryId" : 7,
+  "categoryId" : 8,
   "categoryName" : "Kinder Schotels",
   "active": 1,
   "menuItems" : [{ "name" : "Kindermenu Döner",  
@@ -479,7 +502,7 @@
 },
 
 { 
-  "categoryId" : 8,
+  "categoryId" : 9,
   "categoryName" : "Mix Schotels",
   "active": 1,
   "menuItems" : [{ "name" : "Shoarma & Kebab",  
@@ -569,7 +592,7 @@
 },
 
 { 
-  "categoryId" : 9,
+  "categoryId" : 10,
   "categoryName" : "Nagerecht",
   "active": 1,
   "menuItems" : [{ "name" : "Baklava",  
@@ -581,7 +604,7 @@
 },
 
 { 
-  "categoryId" : 10,
+  "categoryId" : 11,
   "categoryName" : "Pizza's Vegetarisch",
   "active": 1,
   "menuItems" : [{ "name" : "Margherita",  
@@ -635,7 +658,7 @@
 },
 
 { 
-  "categoryId" : 11,
+  "categoryId" : 12,
   "categoryName" : "Pizza's Met Vlees",
   "active": 1,
   "menuItems" : [{ "name" : "Borromea",  
@@ -761,7 +784,7 @@
 },
 
 { 
-  "categoryId" : 12,
+  "categoryId" : 13,
   "categoryName" : "Pizza's Met Vis",
   "active": 1,
   "menuItems" : [{ "name" : "Napolitana",  
@@ -791,7 +814,7 @@
 },
 
 { 
-  "categoryId" : 13,
+  "categoryId" : 14,
   "categoryName" : "Kinder Pizza's",
   "active": 1,
   "menuItems" : [{ "name" : "Margherita",  
@@ -821,7 +844,7 @@
 },
 
 { 
-  "categoryId" : 14,
+  "categoryId" : 15,
   "categoryName" : "Pasta's",
   "active": 1,
   "menuItems" : [{ "name" : "Spaghetti Bolognese",  
@@ -863,7 +886,7 @@
 },
 
 { 
-  "categoryId" : 15,
+  "categoryId" : 16,
   "categoryName" : "Pasta's",
   "active": 1,
   "menuItems" : [{ "name" : "Cola",  
