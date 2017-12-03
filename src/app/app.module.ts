@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { Ng2Webstorage } from 'ng2-webstorage';
+import {ToastyModule} from 'ng2-toasty';
 
 /************** component imports **************/
 import { AppComponent } from './app.component';
@@ -14,8 +15,9 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { ShoppingCardComponent } from './pages/shopping-card/shopping-card.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
-/************** component imports **************/
+/************** Providers imports **************/
 import { ApiCallsService } from './providers/api-calls.service';
+import { NotificationService } from './providers/notification.service';
 
 @NgModule({
   declarations: [
@@ -32,9 +34,11 @@ import { ApiCallsService } from './providers/api-calls.service';
     HttpClientModule,
     RouterModule.forRoot(ROUTES, {useHash: true, preloadingStrategy: PreloadAllModules}),
     Ng2Webstorage,
-    FormsModule
+    FormsModule,
+    ToastyModule.forRoot()
   ],
-  providers: [ApiCallsService],
+  exports: [BrowserModule, ToastyModule],
+  providers: [ApiCallsService, NotificationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

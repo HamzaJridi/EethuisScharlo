@@ -13,10 +13,12 @@
                 <div class="row meal-name">{{item.menuItem.ingredients}}</div>
               </div>
               <div class="col-md-4 padding-top-10" itemtype="http://schema.org/Offer">
-                <div class="price col-md-5">€ {{item.menuItem.price}}</div>
+                <div class="price col-md-5">€ {{item.menuItem.totalPrice | number : '1.2-2'}}</div>
                 <div class="price col-md-5" (click)="deleteMenu(item)">delete</div>
                 <div class="quantity col-md-5">
-                  <input type="number" min="0" value="1" step="1" [(ngModel)]="item.menuItem.quantity" />
+                  <input type="number" min="0" value="1" step="1"
+                         (change)="getItemTotalPrice(item.menuItem)"
+                         [(ngModel)]="item.menuItem.quantity" />
                 </div>
               </div>
             </div>

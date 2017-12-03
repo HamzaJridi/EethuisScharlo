@@ -44,6 +44,8 @@ export class MenuComponent implements OnInit {
     if (this.alreadyExists(selectedMenu, this.selectedMenuList)) {
       return;
     }
+    menuItem['totalPrice'] = menuItem['price'];
+    console.log('************ selectedMenu', selectedMenu);
     this.selectedMenuList.push(selectedMenu);
     this.localSt.store('shop-card-list', this.selectedMenuList);
   }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LocalStorageService } from 'ng2-webstorage';
 
 import { ApiCallsService } from '../../providers/api-calls.service';
+import { NotificationService } from '../../providers/notification.service';
 
 @Component({
   selector: 'app-shopping-card',
@@ -12,8 +13,11 @@ export class ShoppingCardComponent implements OnInit {
   public selectedMenuList: any;
   public menuOrder = {};
 
-  constructor(private localSt: LocalStorageService,
-              private apiCallsService: ApiCallsService) { }
+  constructor(
+    private localSt: LocalStorageService,
+    private apiCallsService: ApiCallsService,
+    private notificationService: NotificationService
+  ) { }
 
   ngOnInit() {
     this.getSelectedMenuList();
@@ -50,11 +54,28 @@ export class ShoppingCardComponent implements OnInit {
     this.apiCallsService.postData('order', this.menuOrder).subscribe(
       (data) => {
         console.log('*********** data', data);
+        this.notificationService.notification.next({
+          msgType: 'success',
+          msgTitle: 'Order Confirmation',
+          msgContent: 'Your order has been submitted, we thank you for chosing us',
+        });
+        this.deleteAllMenus();
       },
       (error) => {
         console.log('*********** error', error);
+        this.notificationService.notification.next({
+          msgType: 'success',
+          msgTitle: 'Order Error',
+          msgContent: 'Sorry, an error occured, please retry or call us',
+        });
       }
     );
+  }
+
+  public getItemTotalPrice(item) {
+    console.log('********** item.quantity', item.quantity);
+    item['totalPrice'] = item['price'] * item['quantity'];
+    console.log('******** item[totalPrice]', item['totalPrice']);
   }
 
   public calculatePrices(orderList, price) {
