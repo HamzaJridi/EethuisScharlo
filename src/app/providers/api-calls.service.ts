@@ -18,9 +18,6 @@ export class ApiCallsService {
   constructor(private httpClient: HttpClient) { }
 
   public getData(url) {
-    console.log('************* url', url);
-    console.log('************* apiUrl', this.apiUrl);
-    console.log('************* rootUrl', this.rootUrl);
     return this.httpClient.get(`${this.rootUrl}${url}`);
     // return this.httpClient.get('../assets/data/menu.json');
   }

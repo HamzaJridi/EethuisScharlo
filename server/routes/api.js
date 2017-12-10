@@ -25,8 +25,9 @@ function setOrdersContent(content) {
         <h3 style="color: #ae4553; text-decoration: underline">Customer Informations</h3>
         <p><span style="font-size: 16px; font-weight: bold">Name: </span>${content.customer.name}</p>
         <p><span style="font-size: 16px; font-weight: bold">Address: </span>${content.customer.address}</p>
-        <p><span style="font-size: 16px; font-weight: bold">Tel: </span>${content.customer. tel}</p>
+        <p><span style="font-size: 16px; font-weight: bold">Tel: </span>${content.customer.telephone}</p>
         <p><span style="font-size: 16px; font-weight: bold">Email: </span>${content.customer.email}</p>
+        <p><span style="font-size: 16px; font-weight: bold">Comments: </span>${content.customer.comment}</p>
     </div>
 
     <div style="padding: 1em">

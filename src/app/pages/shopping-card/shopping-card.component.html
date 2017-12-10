@@ -29,9 +29,40 @@
       <div [hidden]="!selectedMenuList.length" class="row order-section">
 
         <div class="price col-md-6"><b>Prijs</b> : € {{totalPrice | number : '1.2-2'}}</div>
-        <button (click)="orderMenus()">Bestel nu</button>
+        <button (click)="staticModal.show()" class="order-btn">Bestel nu</button>
       </div>
     </div>
   <div class="col-md-3 right-side"></div>
 </div>
+
+  <!--<button type="button" class="btn btn-primary" (click)="staticModal.show()">Static modal</button>-->
+
+  <div class="modal fade" bsModal #staticModal="bs-modal" [config]="{backdrop: true}"
+       tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title pull-left">Static modal</h4>
+          <button type="button" class="close pull-right" aria-label="Close" (click)="staticModal.hide()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="mail-grids">
+            <div class="contact-form">
+              <form>
+                <input type="text" placeholder="Naam" [(ngModel)]="menuOrder['customer']['name']" name="name">
+                <input type="text" placeholder="Email" [(ngModel)]="menuOrder['customer']['email']" name="email">
+                <input type="text" placeholder="address" [(ngModel)]="menuOrder['customer']['address']" name="address">
+                <input type="number" placeholder="telephone" [(ngModel)]="menuOrder['customer']['telephone']" name="telephone">
+                <textarea placeholder="comments" [(ngModel)]="menuOrder['customer']['comment']" name="comment"></textarea>
+                <button (click)="orderMenus()" class="order-btn">Bestel nu</button>
+              </form>
+            </div>
+            <div class="clearfix"> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

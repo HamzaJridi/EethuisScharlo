@@ -11,7 +11,6 @@ export class NotificationService {
     this.toastyConfig.theme = 'material';
     this.notification.subscribe(
       (data: any) => {
-        console.log('******** NOTIFICATION data', data);
         const NotifType = data.msgType.toLocaleLowerCase();
         const toastOptions: ToastOptions = {
           title: data.msgTitle,

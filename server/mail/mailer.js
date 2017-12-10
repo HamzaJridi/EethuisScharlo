@@ -2,7 +2,6 @@ const nodemailer = require('nodemailer')
 
 nodemailer.sendEmail = ((name, userEmail, subject, content) => {
   "use strict"
-  console.log('*********** MAILER ***********')
   nodemailer.createTestAccount((err, account) => {
 
     // create reusable transporter object using the default SMTP transport

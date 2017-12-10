@@ -20,7 +20,6 @@ export class MenuComponent implements OnInit {
     private notificationService: NotificationService
   ) {
     const menuListlocalSt = this.localSt.retrieve('shop-card-list');
-    console.log('************ menuListlocalSt', menuListlocalSt);
     if (!menuListlocalSt) {
       this.localSt.store('shop-card-list', this.selectedMenuList);
     }
@@ -48,7 +47,6 @@ export class MenuComponent implements OnInit {
     }
     menuItem['totalPrice'] = menuItem['price'];
     menuItem['quantity'] = 1;
-    console.log('************ selectedMenu', selectedMenu);
     this.selectedMenuList = this.localSt.retrieve('shop-card-list');
     this.selectedMenuList.push(selectedMenu);
     this.localSt.store('shop-card-list', this.selectedMenuList);
