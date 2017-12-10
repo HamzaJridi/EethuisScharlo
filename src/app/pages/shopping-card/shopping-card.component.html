@@ -3,50 +3,35 @@
   <div class="col-md-6">
     <div class="menu_category row">
       <div class="row">
-        <div class="category-name row">Meest populaire</div>
+        <div class="category-name row">Winkelwagen</div>
         <ul class="category-content row list-unstyled">
           <li itemtype="http://schema.org/Product" *ngFor="let item of selectedMenuList">
             <div class="row meal-item">
-              <div class="col-md-8">
+              <div class="col-md-3">
                 <div class="row meal-name">{{item.menuItem.name}}</div>
-                <div class="row meal-name">{{item.menuItem.description}}</div>
-                <div class="row meal-name">{{item.menuItem.ingredients}}</div>
               </div>
-              <div class="col-md-4 padding-top-10" itemtype="http://schema.org/Offer">
-                <div class="price col-md-5">€ {{item.menuItem.totalPrice | number : '1.2-2'}}</div>
-                <div class="price col-md-5" (click)="deleteMenu(item)">delete</div>
-                <div class="quantity col-md-5">
-                  <input type="number" min="0" value="1" step="1"
+              <div class="col-md-3">
+                <div class="price"><b>Stukprijs</b> : € {{item.menuItem.price | number : '1.2-2'}}</div>
+              </div>
+              <div class="col-md-6" itemtype="http://schema.org/Offer">
+                <div class="price col-md-6"><b>Prijs</b> : € {{item.menuItem.totalPrice | number : '1.2-2'}}</div>
+                <div class="item-quantity-input col-md-3">
+                  <input type="number" min="1"
                          (change)="getItemTotalPrice(item.menuItem)"
                          [(ngModel)]="item.menuItem.quantity" />
                 </div>
+                <div class="remove-from-cart" title="Verwijderen" (click)="deleteMenu(item)">delete</div>
               </div>
             </div>
           </li>
-
-
-
-
-
-          <!--<li itemtype="http://schema.org/Product">-->
-            <!--<div class="row meal-item">-->
-              <!--<div class="col-md-8">-->
-                <!--<div class="row meal-name">Kapsalon Groot</div>-->
-                <!--<div class="row">Kip of kalfsvlees.</div>-->
-              <!--</div>-->
-              <!--<div class="col-md-4 padding-top-10" itemtype="http://schema.org/Offer">-->
-                <!--<div class="price col-md-5">€ 7,00</div>-->
-                <!--<div class="add-to-cart" onclick="alert('item clicked');return false;"></div>-->
-              <!--</div>-->
-            <!--</div>-->
-          <!--</li>-->
-
         </ul>
+      </div>
+      <div [hidden]="!selectedMenuList.length" class="row order-section">
+
+        <div class="price col-md-6"><b>Prijs</b> : € {{totalPrice | number : '1.2-2'}}</div>
+        <button (click)="orderMenus()">Bestel nu</button>
       </div>
     </div>
   <div class="col-md-3 right-side"></div>
 </div>
-  <div>
-    <button (click)="orderMenus()">Order Now</button>
-  </div>
 </div>

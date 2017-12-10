@@ -12,7 +12,7 @@ import { NotificationService } from '../../providers/notification.service';
 export class ShoppingCardComponent implements OnInit {
   public selectedMenuList: any;
   public menuOrder = {};
-
+  public totalPrice  = 0;
   constructor(
     private localSt: LocalStorageService,
     private apiCallsService: ApiCallsService,
@@ -21,6 +21,7 @@ export class ShoppingCardComponent implements OnInit {
 
   ngOnInit() {
     this.getSelectedMenuList();
+    this.calculateTotalPrice();
   }
 
   public getSelectedMenuList() {
@@ -35,11 +36,13 @@ export class ShoppingCardComponent implements OnInit {
       console.log('******** selectedMenuList', this.selectedMenuList);
       this.localSt.store('shop-card-list', this.selectedMenuList);
     }
+    this.calculateTotalPrice();
   }
 
   public deleteAllMenus() {
     this.selectedMenuList = [];
     this.localSt.store('shop-card-list', this.selectedMenuList);
+    this.calculateTotalPrice();
   }
 
   public orderMenus() {
@@ -50,7 +53,7 @@ export class ShoppingCardComponent implements OnInit {
       email: 'hamza@me.com'
     };
     this.menuOrder['order'] =  this.calculatePrices(this.selectedMenuList, false);
-    this.menuOrder['totalPrice'] =  this.calculatePrices(this.selectedMenuList, true);
+    this.calculateTotalPrice();
     this.apiCallsService.postData('order', this.menuOrder).subscribe(
       (data) => {
         console.log('*********** data', data);
@@ -71,11 +74,15 @@ export class ShoppingCardComponent implements OnInit {
       }
     );
   }
-
+  public calculateTotalPrice() {
+    this.menuOrder['totalPrice'] =  this.calculatePrices(this.selectedMenuList, true);
+    this.totalPrice = this.menuOrder['totalPrice'];
+  }
   public getItemTotalPrice(item) {
     console.log('********** item.quantity', item.quantity);
     item['totalPrice'] = item['price'] * item['quantity'];
     console.log('******** item[totalPrice]', item['totalPrice']);
+    this.calculateTotalPrice();
   }
 
   public calculatePrices(orderList, price) {

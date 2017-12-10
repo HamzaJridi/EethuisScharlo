@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LocalStorageService } from 'ng2-webstorage';
 
 import { ApiCallsService } from '../../providers/api-calls.service';
+import { NotificationService } from '../../providers/notification.service';
 
 @Component({
   selector: 'app-menu',
@@ -15,7 +16,8 @@ export class MenuComponent implements OnInit {
 
   constructor(
     private apiCallsService: ApiCallsService,
-    private localSt: LocalStorageService
+    private localSt: LocalStorageService,
+    private notificationService: NotificationService
   ) {
     const menuListlocalSt = this.localSt.retrieve('shop-card-list');
     console.log('************ menuListlocalSt', menuListlocalSt);
@@ -45,15 +47,22 @@ export class MenuComponent implements OnInit {
       return;
     }
     menuItem['totalPrice'] = menuItem['price'];
+    menuItem['quantity'] = 1;
     console.log('************ selectedMenu', selectedMenu);
+    this.selectedMenuList = this.localSt.retrieve('shop-card-list');
     this.selectedMenuList.push(selectedMenu);
     this.localSt.store('shop-card-list', this.selectedMenuList);
+    this.notificationService.notification.next({
+      msgType: 'success',
+      msgTitle: 'Artikel toegevoegd',
+      msgContent: 'Uw artikel is toegevoegd, met succes, aan de winkelwagen',
+    });
   }
 
   public alreadyExists(menu, list) {
     let exist = false;
     for (const item of list) {
-      exist = (menu['menuItem']['id'] === item['menuItem']['id']);
+      exist = (menu['menuItem']['name'] === item['menuItem']['name']);
     }
     return exist;
   }
