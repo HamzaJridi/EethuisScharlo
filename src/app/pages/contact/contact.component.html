@@ -23,11 +23,11 @@
       </div>
       <div class="col-md-6 contact-form">
         <form>
-          <input type="text" placeholder="Naam" required="">
-          <input type="text" placeholder="Email" required="">
-          <input type="text" placeholder="Onderwerp" required="">
-          <textarea placeholder="Bericht" required=""></textarea>
-          <input type="submit" value="Verzenden">
+          <input type="text" placeholder="Naam" [(ngModel)]="comment['name']" name="name">
+          <input type="text" placeholder="Email" [(ngModel)]="comment['email']" name="email">
+          <input type="text" placeholder="Onderwerp" [(ngModel)]="comment['subject']" name="subject">
+          <textarea placeholder="Bericht" [(ngModel)]="comment['message']"  name="message"></textarea>
+          <button (click)="sendComments()" class="order-btn">Verzenden</button>
         </form>
       </div>
       <div class="clearfix"> </div>

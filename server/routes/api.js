@@ -53,4 +53,22 @@ function setOrdersContent(content) {
     </div>`
   return emailContent
 }
+
+router.post('/contact', (req, res) => {
+  nodemailer.sendEmail(req.body.name, req.body.email, 'Klant e-mail', setContactContent(req.body))
+res.status(201).send(req.body);
+});
+
+function setContactContent(content) {
+  let emailContent = `
+    <div style="padding: 1em">
+        <h3 style="color: #ae4553; text-decoration: underline">Klant e-mail</h3>
+        <p><span style="font-size: 16px; font-weight: bold">Naam: </span>${content.name}</p>
+        <p><span style="font-size: 16px; font-weight: bold">Email: </span>${content.email}</p>
+        <p><span style="font-size: 16px; font-weight: bold">Onderwerp: </span>${content.subject}</p>
+        <p><span style="font-size: 16px; font-weight: bold">Bericht: </span>${content.message}</p>
+    </div>
+  `
+  return emailContent
+}
 module.exports = router;
