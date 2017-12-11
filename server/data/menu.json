@@ -23,7 +23,7 @@
 },
 { 
   "categoryId" : 1,
-  "categoryName" : "Salades, Rijst & Sopen",
+  "categoryName" : "Salades, Rijst & Soepen",
   "active": 1,
   "menuItems" : [{ "name" : "Gemengde Salade",  
                    "description"  : "",
