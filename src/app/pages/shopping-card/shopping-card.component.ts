@@ -10,7 +10,7 @@ import { NotificationService } from '../../providers/notification.service';
   styleUrls: ['./shopping-card.component.scss']
 })
 export class ShoppingCardComponent implements OnInit {
-  @ViewChild('staticModal') public staticModal: ElementRef;
+  @ViewChild('staticModal') public staticModal: any;
 
   public selectedMenuList: any;
   public menuOrder = {};
@@ -32,6 +32,7 @@ export class ShoppingCardComponent implements OnInit {
   ngOnInit() {
     this.getSelectedMenuList();
     this.calculateTotalPrice();
+    console.log('************ this.staticModal', this.staticModal);
   }
 
   public getSelectedMenuList() {
