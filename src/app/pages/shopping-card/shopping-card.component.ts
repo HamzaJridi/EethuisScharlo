@@ -55,7 +55,7 @@ export class ShoppingCardComponent implements OnInit {
   }
 
   public orderMenus() {
-    if (!this.menuOrder['customer']['email'] && !this.menuOrder['customer']['telephone']) {
+    if (!this.menuOrder['customer']['name'] || !this.menuOrder['customer']['email'] || !this.menuOrder['customer']['address'] || !this.menuOrder['customer']['telephone']) {
       return;
     }
     // this.menuOrder['customer'] = {
@@ -71,17 +71,17 @@ export class ShoppingCardComponent implements OnInit {
       (data) => {
         this.notificationService.notification.next({
           msgType: 'success',
-          msgTitle: 'Order Confirmation',
-          msgContent: 'Your order has been submitted, we thank you for chosing us',
+          msgTitle: 'Bestellen bevestiging',
+          msgContent: 'Wij hebben uw bestellen ontvangen!',
         });
         this.deleteAllMenus();
         this.staticModal.hide();
       },
       (error) => {
         this.notificationService.notification.next({
-          msgType: 'success',
-          msgTitle: 'Order Error',
-          msgContent: 'Sorry, an error occured, please retry or call us',
+          msgType: 'error',
+          msgTitle: 'Fout bij bestellen',
+          msgContent: 'Sorry, een fout opgetreden, probeer het opnieuw of bel ons',
         });
       }
     );
@@ -91,6 +91,10 @@ export class ShoppingCardComponent implements OnInit {
     this.totalPrice = this.menuOrder['totalPrice'];
   }
   public getItemTotalPrice(item) {
+    item['quantity'] = Math.floor(item['quantity']);
+    if (item['quantity'] < 1 ){
+      item['quantity'] = 1;
+    }
     item['totalPrice'] = item['price'] * item['quantity'];
     this.calculateTotalPrice();
   }

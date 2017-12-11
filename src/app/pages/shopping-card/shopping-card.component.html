@@ -3,7 +3,8 @@
   <div class="col-md-6">
     <div class="menu_category row">
       <div class="row">
-        <div class="category-name row">Winkelwagen</div>
+        <div [hidden]="!selectedMenuList.length" class="category-name row">Winkelwagen</div>
+        <div [hidden]="selectedMenuList.length" class="category-name row"> Winkelwagen is leeg</div>
         <ul class="category-content row list-unstyled">
           <li itemtype="http://schema.org/Product" *ngFor="let item of selectedMenuList">
             <div class="row meal-item">
@@ -26,9 +27,9 @@
           </li>
         </ul>
       </div>
-      <div [hidden]="!selectedMenuList.length" class="row order-section">
+      <div [hidden]="!selectedMenuList.length" class="row">
 
-        <div class="price col-md-6"><b>Prijs</b> : € {{totalPrice | number : '1.2-2'}}</div>
+        <div class="price col-md-8 order-section"><b>Totale orderprijs : € {{totalPrice | number : '1.2-2'}}</b></div>
         <button (click)="staticModal.show()" class="order-btn">Bestel nu</button>
       </div>
     </div>
@@ -42,7 +43,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title pull-left">Static modal</h4>
+          <h4 class="modal-title pull-left">Klant informatie</h4>
           <button type="button" class="close pull-right" aria-label="Close" (click)="staticModal.hide()">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -53,9 +54,9 @@
               <form>
                 <input type="text" placeholder="Naam" [(ngModel)]="menuOrder['customer']['name']" name="name">
                 <input type="text" placeholder="Email" [(ngModel)]="menuOrder['customer']['email']" name="email">
-                <input type="text" placeholder="address" [(ngModel)]="menuOrder['customer']['address']" name="address">
-                <input type="number" placeholder="telephone" [(ngModel)]="menuOrder['customer']['telephone']" name="telephone">
-                <textarea placeholder="comments" [(ngModel)]="menuOrder['customer']['comment']" name="comment"></textarea>
+                <input type="text" placeholder="Adres" [(ngModel)]="menuOrder['customer']['address']" name="address">
+                <input type="number" placeholder="Telefoon" [(ngModel)]="menuOrder['customer']['telephone']" name="telephone">
+                <textarea placeholder="Bericht" [(ngModel)]="menuOrder['customer']['comment']" name="comment"></textarea>
                 <button (click)="orderMenus()" class="order-btn">Bestel nu</button>
               </form>
             </div>
