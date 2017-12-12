@@ -47,9 +47,15 @@ function setOrdersContent(content) {
   emailContent += ` 
     </div>
     <div>
-      <h3 style="text-decoration: underline">
+      <h3 style="text-decoration: line-through">
         <span style="color: #ae4553; padding: 1em; text-align: center">Totale orderprijs: </span>€ ${content.totalPrice}
       </h3>
+      <h3 style="text-decoration: underline">
+        <span style="color: #ae4553; padding: 1em; text-align: center">Korting: </span>10%
+      </h3>
+      <h2 style="text-decoration: underline">
+        <span style="color: #ae4553; padding: 1em; text-align: center">Korting: </span>€ ${content.discountPrice}
+      </h2>
     </div>`
   return emailContent
 }

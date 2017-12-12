@@ -15,22 +15,37 @@
                 <div class="price"><b>Stukprijs</b> : € {{item.menuItem.price | number : '1.2-2'}}</div>
               </div>
               <div class="col-md-6" itemtype="http://schema.org/Offer">
-                <div class="price col-md-6"><b>Prijs</b> : € {{item.menuItem.totalPrice | number : '1.2-2'}}</div>
                 <div class="item-quantity-input col-md-3">
                   <input type="number" min="1"
-                         (change)="getItemTotalPrice(item.menuItem)"
+                         (change)="getItemTotalPrice(item.menuItem,null)"
                          [(ngModel)]="item.menuItem.quantity" />
                 </div>
-                <div class="remove-from-cart" title="Verwijderen" (click)="deleteMenu(item)">delete</div>
+                <div class="col-md-7">
+                  <div class="raise-quantiy" title="Aantal verhogen" (click)="getItemTotalPrice(item.menuItem, true)">raise</div>
+                  <div class="reduce-quantity" title="Verminder hoeveelheid" (click)="getItemTotalPrice(item.menuItem,false)">reduce</div>
+                  <div class="remove-from-cart" title="Verwijderen" (click)="deleteMenu(item)">delete</div>
+                </div>
               </div>
             </div>
           </li>
         </ul>
       </div>
       <div [hidden]="!selectedMenuList.length" class="row">
-
-        <div class="price col-md-8 order-section"><b>Totale orderprijs : € {{totalPrice | number : '1.2-2'}}</b></div>
-        <button (click)="staticModal.show()" class="order-btn">Bestel nu</button>
+        <div class="row" style="margin-left: 30px;margin-top: 20px; margin-bottom: 10px;">
+          <div class="price col-md-5 order-section"><b>Totale orderprijs </b></div>
+          <div class="col-md-4 order-section"><b>: € {{totalPrice | number : '1.2-2'}}</b></div>
+      </div>
+        <div class="row" style="margin-left: 30px; margin-bottom: 10px;">
+          <div class="price col-md-5 order-section"><b>Korting </b></div>
+          <div class="order-section col-md-4"><b>: 10%</b></div>
+        </div>
+        <div class="row" style="margin-left: 30px; margin-bottom: 10px;">
+          <div class="col-md-5 discount"><b>Totale prijs na korting </b></div>
+          <div class="col-md-3 discount"><b>: € {{discountPrice | number : '1.2-2'}}</b></div>
+          <div class="col-md-3">
+            <button (click)="staticModal.show()" class="order-btn">Bestel nu</button>
+          </div>
+        </div>
       </div>
     </div>
   <div class="col-md-3 right-side"></div>

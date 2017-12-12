@@ -53,18 +53,42 @@ input[type=number]::-webkit-outer-spin-button {
   content:url(../../assets/images/remove.png);
   max-height: 24px;
   width: 24px;
-  float: right;
+  float: left;
   cursor: pointer;
+}
+.raise-quantiy {
+  content:url(../../assets/images/raise.png);
+  max-height: 24px;
+  width: 24px;
+  float: left;
+  cursor: pointer;
+  margin-right: 30px;
+  margin-left: 20px;
+}
+.reduce-quantity {
+  content:url(../../assets/images/reduce.png);
+  max-height: 24px;
+  width: 24px;
+  float: left;
+  cursor: pointer;
+  margin-right: 30px;
 }
 .item-quantity-input{
   margin-top: -15px;
 }
 .order-section{
   float:left;
-  font-size: 24px;
-  color: #0163af;
+  font-size: 20px;
+  color: orangered;
+}
+.discount{
+  float:left;
+  font-size: 26px;
+  color: orangered;
 }
 .order-btn  {
+  float: right;
+  padding-top: 20px;
   border: none;
   outline: none;
   color: #fff;

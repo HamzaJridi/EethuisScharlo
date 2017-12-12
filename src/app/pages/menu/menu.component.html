@@ -9,7 +9,7 @@
           <li itemtype="http://schema.org/Product" *ngFor="let menuItem of menu.menuItems">
             <div class="row meal-item">
               <div class="col-md-8">
-                <div class="row meal-name">{{menuItem.name}}</div>
+                <div class="row meal-name">{{menuItem.rank}}. {{menuItem.name}}</div>
                 <!-- <div class="row">desc: {{menuItem.description}}</div> -->
                 <!-- <div class="row">Ingredients: {{menuItem.ingredients}}</div> -->
               </div>

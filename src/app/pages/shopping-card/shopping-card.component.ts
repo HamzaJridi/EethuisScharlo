@@ -15,6 +15,7 @@ export class ShoppingCardComponent implements OnInit {
   public selectedMenuList: any;
   public menuOrder = {};
   public totalPrice  = 0;
+  public discountPrice  = 0;
   constructor(
     private localSt: LocalStorageService,
     private apiCallsService: ApiCallsService,
@@ -22,10 +23,10 @@ export class ShoppingCardComponent implements OnInit {
   ) {
     this.menuOrder['customer'] = {
       name: null,
-      email: null,
+      email: '',
       address: null,
       telephone: null,
-      comment: null
+      comment: ''
     };
   }
 
@@ -55,7 +56,7 @@ export class ShoppingCardComponent implements OnInit {
   }
 
   public orderMenus() {
-    if (!this.menuOrder['customer']['name'] || !this.menuOrder['customer']['email'] || !this.menuOrder['customer']['address'] || !this.menuOrder['customer']['telephone']) {
+    if (!this.menuOrder['customer']['name']  || !this.menuOrder['customer']['address'] || !this.menuOrder['customer']['telephone']) {
       return;
     }
     // this.menuOrder['customer'] = {
@@ -89,13 +90,22 @@ export class ShoppingCardComponent implements OnInit {
   public calculateTotalPrice() {
     this.menuOrder['totalPrice'] =  this.calculatePrices(this.selectedMenuList, true);
     this.totalPrice = this.menuOrder['totalPrice'];
+    this.menuOrder['discountPrice'] = (this.menuOrder['totalPrice'] * 0.9).toFixed(2);
+    this.discountPrice = this.menuOrder['discountPrice'];
   }
-  public getItemTotalPrice(item) {
-    item['quantity'] = Math.floor(item['quantity']);
+  public getItemTotalPrice(item, raiseFlag) {
+    if (raiseFlag == false){
+      item['quantity'] = Math.floor(item['quantity'] - 1);
+    }else if(raiseFlag == true){
+      item['quantity'] = Math.floor(item['quantity'] + 1);
+    }else{
+      item['quantity'] = Math.floor(item['quantity']);
+    }
+
     if (item['quantity'] < 1 ){
       item['quantity'] = 1;
     }
-    item['totalPrice'] = item['price'] * item['quantity'];
+    item['totalPrice'] = (item['price'] * item['quantity']).toFixed(2);
     this.calculateTotalPrice();
   }
 
@@ -106,6 +116,6 @@ export class ShoppingCardComponent implements OnInit {
       totalPrice += item['menuItem']['totalPrice'];
     }
     // orderList.push({totalPrice});
-    return price ? totalPrice : orderList;
+    return price ? (totalPrice).toFixed(2) : orderList;
   }
 }
