@@ -6,7 +6,7 @@
         <div [hidden]="!selectedMenuList.length" class="category-name row">Winkelwagen</div>
         <div [hidden]="selectedMenuList.length" class="category-name row"> Winkelwagen is leeg</div>
         <ul class="category-content row list-unstyled">
-          <li itemtype="http://schema.org/Product" *ngFor="let item of selectedMenuList">
+          <li *ngFor="let item of selectedMenuList">
             <div class="row meal-item">
               <div class="col-md-3">
                 <div class="row meal-name">{{item.menuItem.name}}</div>
@@ -14,7 +14,7 @@
               <div class="col-md-3">
                 <div class="price"><b>Stukprijs</b> : € {{item.menuItem.price | number : '1.2-2'}}</div>
               </div>
-              <div class="col-md-6" itemtype="http://schema.org/Offer">
+              <div class="col-md-6">
                 <div class="item-quantity-input col-md-3">
                   <input type="number" min="1"
                          (change)="getItemTotalPrice(item.menuItem,null)"

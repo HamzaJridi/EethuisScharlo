@@ -1,13 +1,13 @@
 <!--footer-->
-<div class="footer">
+<div class="footer" itemscope="" itemtype="http://schema.org/Restaurant">
   <div class="container">
-    <div class="col-xs-4 footer-left">
+    <div class="col-xs-4 footer-left" itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
       <h4>Adres</h4>
       <ul>
-        <li>Eethuis Scharlo</li>
-        <li>Scharlo 32</li>
-        <li>1815 CP Alkmaar</li>
-        <li>072 515 10 81</li>
+        <li itemprop="name">Eethuis Scharlo</li>
+        <li itemprop="streetAddress">Scharlo 32</li>
+        <li><span itemprop="addressLocality">itemprop="postalCode">1815 CP</span><span itemprop="addressLocality"> Alkmaar</span></li>
+        <li itemprop="telephone">072 515 10 81</li>
       </ul>
     </div>
     <div class="col-xs-4 footer-left">
@@ -39,3 +39,23 @@
     <div class="clearfix"> </div>
   </div>
 </div>
+<div itemprop="geo" itemscope="" itemtype="http://schema.org/GeoCoordinates">
+  <meta itemprop="latitude" content="52.6355770">
+  <meta itemprop="longitude" content="4.7382562">
+</div>
+<script type="application/ld+json">
+	{
+	"@context": "http://schema.org/",
+	"@type": "Organization",
+    "url" : "http://eethuisscharlo.nl",
+			"logo": "/http://eethuisscharlo.nl/eethuis-scharlo.png",
+			"sameAs": [
+				"https://www.facebook.com/Scharlo-food-1698619000390160/"
+				],
+			"contactPoint": {
+				"@type": "ContactPoint",
+				"telephone": "+31 72 515 10 81",
+				"contactType": "telefoonnummer"
+				}
+	}
+</script>

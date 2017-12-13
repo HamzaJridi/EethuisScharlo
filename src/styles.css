@@ -452,6 +452,7 @@ img.zoom-img:hover{
   padding: 1em 0 5em;
   position: relative;
   background-color: #fee8ce;
+  margin-right: 0px !important;
 }
 .menu-tag {
   position: absolute;

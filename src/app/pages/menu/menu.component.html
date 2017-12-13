@@ -6,15 +6,15 @@
       <div class="row">
         <div class="category-name row">{{menu.categoryName}}</div>
         <ul class="category-content row list-unstyled">
-          <li itemtype="http://schema.org/Product" *ngFor="let menuItem of menu.menuItems">
-            <div class="row meal-item">
+          <li itemtype="http://schema.org/Product" itemscope *ngFor="let menuItem of menu.menuItems">
+            <div itemtype="http://schema.org/Offer" itemscope itemprop="offers" class="row meal-item">
               <div class="col-md-8">
-                <div class="row meal-name">{{menuItem.rank}}. {{menuItem.name}}</div>
+                <div itemprop="name" class="row meal-name">{{menuItem.rank}}. {{menuItem.name}}</div>
                 <!-- <div class="row">desc: {{menuItem.description}}</div> -->
                 <!-- <div class="row">Ingredients: {{menuItem.ingredients}}</div> -->
               </div>
               <div class="col-md-4 padding-top-10" itemtype="http://schema.org/Offer">
-                <div class="price col-md-5">€ {{menuItem.price}}</div>
+                <div itemprop="price" class="price col-md-5">€ {{menuItem.price}}</div>
                 <div title="Bestellen" class="add-to-cart" (click)="addToShop(menu.categoryName, menuItem)"></div>
               </div>
             </div>
