@@ -11,7 +11,7 @@ export class ApiCallsService {
     domaine: window.location.protocol + '//' + window.location.hostname,
     path: 'api/',
     // port: apiPort + baseUrl
-    port: ':3000' + '/'
+    port: ':8080' + '/'
   };
   public rootUrl = this.apiUrl.domaine + this.apiUrl.port + this.apiUrl.path;
 
