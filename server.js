@@ -56,7 +56,6 @@ app.set('port', port)
  * Create HTTP server.
  */
 const server = http.createServer(app)
-console.log('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ process.env.NODE_ENV', process.env.NODE_ENV)
 /**
  * Listen on provided port, on all network interfaces.
  */

@@ -16,17 +16,7 @@ export class ApiCallsService {
 };
   public rootUrl = `${this.apiUrl.domaine}:${this.apiUrl.port}${this.apiUrl.path}`;
 
-  constructor(private httpClient: HttpClient) {
-    console.log('*****************************************************************************');
-    console.log('*****************************************************************************');
-    console.log('*****************************************************************************');
-    console.log('**************************************************** this.apiUrl', this.apiUrl.domaine);
-    console.log('*************************************************** this.apiUrl', this.apiUrl.path);
-    console.log('*************************************************** this.apiUrl', this.apiUrl.port);
-    console.log('*****************************************************************************');
-    console.log('*****************************************************************************');
-    console.log('*****************************************************************************');
-  }
+  constructor(private httpClient: HttpClient) {}
 
   public getData(url) {
     return this.httpClient.get(`${this.rootUrl}${url}`);
