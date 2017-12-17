@@ -827,13 +827,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var ApiCallsService = (function () {
     function ApiCallsService(httpClient) {
         this.httpClient = httpClient;
+        this.port = (window.location.port === '3000') ? '3000' : window.location.port;
         this.apiUrl = {
-            domaine: window.location.protocol + '//' + window.location.hostname,
-            path: 'api/',
-            // port: apiPort + baseUrl
-            port: ':3000' + '/'
+            domaine: window.location.protocol + "//" + window.location.hostname,
+            path: '/api/',
+            port: this.port
         };
-        this.rootUrl = this.apiUrl.domaine + this.apiUrl.port + this.apiUrl.path;
+        this.rootUrl = this.apiUrl.domaine + ":" + this.apiUrl.port + this.apiUrl.path;
         console.log('*****************************************************************************');
         console.log('*****************************************************************************');
         console.log('*****************************************************************************');

@@ -7,13 +7,14 @@ import { HttpClient, HttpResponse, HttpErrorResponse } from '@angular/common/htt
 @Injectable()
 export class ApiCallsService {
 
+  public port = (window.location.port === '3000') ? '3000' : window.location.port
+
   public apiUrl: any = {
-    domaine: window.location.protocol + '//' + window.location.hostname,
-    path: 'api/',
-    // port: apiPort + baseUrl
-    port: ':3000' + '/'
-  };
-  public rootUrl = this.apiUrl.domaine + this.apiUrl.port + this.apiUrl.path;
+  domaine: `${window.location.protocol}//${window.location.hostname}`,
+  path: '/api/',
+  port: this.port
+};
+  public rootUrl = `${this.apiUrl.domaine}:${this.apiUrl.port}${this.apiUrl.path}`;
 
   constructor(private httpClient: HttpClient) {
     console.log('*****************************************************************************');
