@@ -831,7 +831,7 @@ var ApiCallsService = (function () {
             domaine: window.location.protocol + '//' + window.location.hostname,
             path: 'api/',
             // port: apiPort + baseUrl
-            port: ':3000' + '/'
+            port: ':8080' + '/'
         };
         this.rootUrl = this.apiUrl.domaine + this.apiUrl.port + this.apiUrl.path;
     }
@@ -840,6 +840,15 @@ var ApiCallsService = (function () {
         // return this.httpClient.get('../assets/data/menu.json');
     };
     ApiCallsService.prototype.postData = function (url, data) {
+        console.log('*****************************************************************************');
+        console.log('*****************************************************************************');
+        console.log('*****************************************************************************');
+        console.log('**************************************************** this.apiUrl', this.apiUrl.domaine);
+        console.log('*************************************************** this.apiUrl', this.apiUrl.path);
+        console.log('*************************************************** this.apiUrl', this.apiUrl.port);
+        console.log('*****************************************************************************');
+        console.log('*****************************************************************************');
+        console.log('*****************************************************************************');
         return this.httpClient.post("" + this.rootUrl + url, data);
     };
     ApiCallsService = __decorate([
