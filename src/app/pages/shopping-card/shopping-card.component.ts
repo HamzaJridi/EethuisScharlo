@@ -33,7 +33,6 @@ export class ShoppingCardComponent implements OnInit {
   ngOnInit() {
     this.getSelectedMenuList();
     this.calculateTotalPrice();
-    console.log('************ this.staticModal', this.staticModal);
   }
 
   public getSelectedMenuList() {

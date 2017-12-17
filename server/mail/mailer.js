@@ -33,16 +33,8 @@ nodemailer.sendEmail = ((name, userEmail, subject, content) => {
     // send mail with defined transport object
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
-        console.log('*********************************************************')
-        console.log('*********************************************************')
-        console.log('*********************************************************')
-        console.log('*********************************************************')
-        console.log('************ MAIL ERROR')
         return console.log(error);
       }
-      console.log('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
-      console.log('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
-      console.log('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
       console.log('Message sent: %s', info.messageId)
       // Preview only available when sending through an Ethereal account
       console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info))
