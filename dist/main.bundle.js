@@ -831,15 +831,9 @@ var ApiCallsService = (function () {
             domaine: window.location.protocol + '//' + window.location.hostname,
             path: 'api/',
             // port: apiPort + baseUrl
-            port: ':8080' + '/'
+            port: ':3000' + '/'
         };
         this.rootUrl = this.apiUrl.domaine + this.apiUrl.port + this.apiUrl.path;
-    }
-    ApiCallsService.prototype.getData = function (url) {
-        return this.httpClient.get("" + this.rootUrl + url);
-        // return this.httpClient.get('../assets/data/menu.json');
-    };
-    ApiCallsService.prototype.postData = function (url, data) {
         console.log('*****************************************************************************');
         console.log('*****************************************************************************');
         console.log('*****************************************************************************');
@@ -849,6 +843,12 @@ var ApiCallsService = (function () {
         console.log('*****************************************************************************');
         console.log('*****************************************************************************');
         console.log('*****************************************************************************');
+    }
+    ApiCallsService.prototype.getData = function (url) {
+        return this.httpClient.get("" + this.rootUrl + url);
+        // return this.httpClient.get('../assets/data/menu.json');
+    };
+    ApiCallsService.prototype.postData = function (url, data) {
         return this.httpClient.post("" + this.rootUrl + url, data);
     };
     ApiCallsService = __decorate([

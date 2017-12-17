@@ -11,18 +11,11 @@ export class ApiCallsService {
     domaine: window.location.protocol + '//' + window.location.hostname,
     path: 'api/',
     // port: apiPort + baseUrl
-    port: ':8080' + '/'
+    port: ':3000' + '/'
   };
   public rootUrl = this.apiUrl.domaine + this.apiUrl.port + this.apiUrl.path;
 
-  constructor(private httpClient: HttpClient) { }
-
-  public getData(url) {
-    return this.httpClient.get(`${this.rootUrl}${url}`);
-    // return this.httpClient.get('../assets/data/menu.json');
-  }
-
-  public postData(url, data) {
+  constructor(private httpClient: HttpClient) {
     console.log('*****************************************************************************');
     console.log('*****************************************************************************');
     console.log('*****************************************************************************');
@@ -32,6 +25,14 @@ export class ApiCallsService {
     console.log('*****************************************************************************');
     console.log('*****************************************************************************');
     console.log('*****************************************************************************');
+  }
+
+  public getData(url) {
+    return this.httpClient.get(`${this.rootUrl}${url}`);
+    // return this.httpClient.get('../assets/data/menu.json');
+  }
+
+  public postData(url, data) {
     return this.httpClient.post(`${this.rootUrl}${url}`, data);
   }
 }

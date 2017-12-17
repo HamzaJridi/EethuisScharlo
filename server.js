@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(function (req, res, next) {
 
   // Website you wish to allow to connect
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
+  res.setHeader('Access-Control-Allow-Origin', 'http://eethuisscharlo.herokuapp.com');
 
   // Request methods you wish to allow
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
@@ -48,7 +48,7 @@ app.get('*', (req, res) => {
 /**
  * Get port from environment and store in Express.
  */
-const port = process.env.PORT || '8080'
+const port = process.env.PORT || '3000'
 // const port = '3000'
 app.set('port', port)
 
